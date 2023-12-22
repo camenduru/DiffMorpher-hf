@@ -188,7 +188,7 @@ with gr.Blocks() as demo:
                 use_adain = gr.Checkbox(value=True, label="Use AdaIN", interactive=True)
                 use_reschedule = gr.Checkbox(value=True, label="Use Reschedule", interactive=True)
             with gr.Row():
-                num_frames = gr.Number(value=15, minimum=0, label="Number of Frames", precision=0, interactive=True)
+                num_frames = gr.Number(value=16, minimum=0, label="Number of Frames", precision=0, interactive=True)
                 fps = gr.Number(value=8, minimum=0, label="FPS (Frame rate)", precision=0, interactive=True)
                 output_path = gr.Text(value="./results", label="Output Path", interactive=True)
                 
