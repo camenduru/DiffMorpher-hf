@@ -153,7 +153,8 @@ with gr.Blocks() as demo:
     with gr.Row():
         gr.Markdown("""
         ### Usage:
-        1. Upload two images (with correspondence) and fill out the prompts.
+        1. Upload two images (with correspondence) and fill out the prompts. 
+           (It's recommended to change `[Output path]` accordingly.)
         2. Click **"Run!"**
         
         Or:
