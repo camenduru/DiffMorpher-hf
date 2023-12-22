@@ -8,7 +8,7 @@ from datetime import datetime
 from morph_attn import DiffMorpherPipeline
 from lora_utils import train_lora
 
-LENGTH=480
+LENGTH=450
 
 def train_lora_interface(
     image,
@@ -69,12 +69,13 @@ def run_diffmorpher(
         progress=gr.Progress()
     )
     video_path = f"{output_path}/{run_id}.mp4"
-    video = cv2.VideoWriter(video_path, cv2.VideoWriter_fourcc(*'mp4v'), fps, (LENGTH, LENGTH))
-    for image in images:
+    video = cv2.VideoWriter(video_path, cv2.VideoWriter_fourcc(*'mp4v'), fps, (512, 512))
+    for i, image in enumerate(images):
+        # image.save(f"{output_path}/{i}.png")
         video.write(cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR))
     video.release()
     cv2.destroyAllWindows()
-    return output_video.update(value=video_path)
+    return gr.Video(value=video_path, format="mp4", label="Output video", show_label=True, height=LENGTH, width=LENGTH, interactive=False)
 
 def run_all(
     image_0,
@@ -164,7 +165,7 @@ with gr.Blocks() as demo:
         4. Click **"Run w/o LoRA training"**
         
         ### Note: 
-        1. To speed up the generation process, you can **ruduce the number of frames** or **turn off "Use Reschedule"** ("Use Reschedule" will double the generation time).
+        1. To speed up the generation process, you can **ruduce the number of frames** or **turn off "Use Reschedule"**.
         2. You can try the influence of different prompts. It seems that using the same prompts or aligned prompts works better.
         ### Have fun!
         """)
