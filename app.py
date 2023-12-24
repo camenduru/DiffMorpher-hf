@@ -166,8 +166,9 @@ with gr.Blocks() as demo:
         4. Click **"Run w/o LoRA training"**
         
         ### Note: 
-        1. To speed up the generation process, you can **ruduce the number of frames** or **turn off "Use Reschedule"**.
-        2. You can try the influence of different prompts. It seems that using the same prompts or aligned prompts works better.
+        1. **Try restarting the space if you got an error.** (Still finding why...)
+        2. To speed up the generation process, you can **ruduce the number of frames** or **turn off "Use Reschedule"**.
+        3. You can try the influence of different prompts. It seems that using the same prompts or aligned prompts works better.
         ### Have fun!
         """)
         
