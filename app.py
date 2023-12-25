@@ -136,14 +136,14 @@ with gr.Blocks() as demo:
     with gr.Row():
         with gr.Column():
             input_img_0 = gr.Image(type="numpy", label="Input image A", value="Musk.jpg", show_label=True, height=LENGTH, width=LENGTH, interactive=True)
-            prompt_0 = gr.Textbox(label="Prompt for image A", value="a photo of an American man", interactive=True)
+            prompt_0 = gr.Textbox(label="Prompt for image A", value="a photo of a man's face", interactive=True)
             with gr.Row():
                 train_lora_0_button = gr.Button("Train LoRA A")
                 train_lora_1_button = gr.Button("Train LoRA B")
             # show_correspond_button = gr.Button("Show correspondence points")
         with gr.Column():
             input_img_1 = gr.Image(type="numpy", label="Input image B ", value="Feifei.jpg", show_label=True, height=LENGTH, width=LENGTH, interactive=True)
-            prompt_1 = gr.Textbox(label="Prompt for image B", value="a photo of an American man", interactive=True)
+            prompt_1 = gr.Textbox(label="Prompt for image B", value="a photo of a woman's face", interactive=True)
             with gr.Row():
                 clear_button = gr.Button("Clear All")
                 run_button = gr.Button("Run w/o LoRA training")
