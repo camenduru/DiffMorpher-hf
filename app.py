@@ -124,23 +124,25 @@ with gr.Blocks() as demo:
         gr.Markdown("""
         # Official Implementation of [DiffMorpher](https://kevin-thu.github.io/DiffMorpher_page/)
         
-        **Note: Try restarting the space if you got an error.* This is because the storage is limited now.
+        **Note: Try restarting the space if you got an error.** This is because the storage is limited now.
+        
+        Besides morphing, you can also try animations to make smooth videos too.
         """)
 
-    original_image_0, original_image_1 = gr.State(Image.open("Trump.jpg").convert("RGB").resize((512,512), Image.BILINEAR)), gr.State(Image.open("Biden.jpg").convert("RGB").resize((512,512), Image.BILINEAR))
+    original_image_0, original_image_1 = gr.State(Image.open("Musk.jpg").convert("RGB").resize((512,512), Image.BILINEAR)), gr.State(Image.open("Feifei.jpg").convert("RGB").resize((512,512), Image.BILINEAR))
     # key_points_0, key_points_1 = gr.State([]), gr.State([])
     # to_change_points = gr.State([])
     
     with gr.Row():
         with gr.Column():
-            input_img_0 = gr.Image(type="numpy", label="Input image A", value="Trump.jpg", show_label=True, height=LENGTH, width=LENGTH, interactive=True)
+            input_img_0 = gr.Image(type="numpy", label="Input image A", value="Musk.jpg", show_label=True, height=LENGTH, width=LENGTH, interactive=True)
             prompt_0 = gr.Textbox(label="Prompt for image A", value="a photo of an American man", interactive=True)
             with gr.Row():
                 train_lora_0_button = gr.Button("Train LoRA A")
                 train_lora_1_button = gr.Button("Train LoRA B")
             # show_correspond_button = gr.Button("Show correspondence points")
         with gr.Column():
-            input_img_1 = gr.Image(type="numpy", label="Input image B ", value="Biden.jpg", show_label=True, height=LENGTH, width=LENGTH, interactive=True)
+            input_img_1 = gr.Image(type="numpy", label="Input image B ", value="Feifei.jpg", show_label=True, height=LENGTH, width=LENGTH, interactive=True)
             prompt_1 = gr.Textbox(label="Prompt for image B", value="a photo of an American man", interactive=True)
             with gr.Row():
                 clear_button = gr.Button("Clear All")
