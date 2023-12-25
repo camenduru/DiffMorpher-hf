@@ -123,6 +123,8 @@ with gr.Blocks() as demo:
     with gr.Row():
         gr.Markdown("""
         # Official Implementation of [DiffMorpher](https://kevin-thu.github.io/DiffMorpher_page/)
+        
+        **Note: Try restarting the space if you got an error.* This is because the storage is limited now.
         """)
 
     original_image_0, original_image_1 = gr.State(Image.open("Trump.jpg").convert("RGB").resize((512,512), Image.BILINEAR)), gr.State(Image.open("Biden.jpg").convert("RGB").resize((512,512), Image.BILINEAR))
@@ -166,7 +168,7 @@ with gr.Blocks() as demo:
         4. Click **"Run w/o LoRA training"**
         
         ### Note: 
-        1. **Try restarting the space if you got an error.** (Still finding why...)
+        1. **Try restarting the space if you got an error.** (Because the storage is limited)
         2. To speed up the generation process, you can **ruduce the number of frames** or **turn off "Use Reschedule"**.
         3. You can try the influence of different prompts. It seems that using the same prompts or aligned prompts works better.
         ### Have fun!
