@@ -310,4 +310,4 @@ with gr.Blocks() as demo:
         [output_video]
     )
         
-demo.queue().launch(debug=True)
+demo.queue().launch(debug=True, share=True)
